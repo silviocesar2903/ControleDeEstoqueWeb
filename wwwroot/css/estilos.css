@@ -1,0 +1,19 @@
+.local-table-categories tr > th:last-child,
+.local-table-categories tr > td:last-child
+{
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.local-table-products tr > th:last-child,
+.local-table-products tr > td:last-child,
+.local-table-products tr > th:nth-child(3),
+.local-table-products tr > td:nth-child(3),
+.local-table-products tr > th:nth-child(4),
+.local-table-products tr > td:nth-child(4)
+{
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}

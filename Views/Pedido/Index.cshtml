@@ -1,0 +1,52 @@
+@model IEnumerable<PedidoModel>
+@{
+    ViewBag.Subtitulo = "Listagem de Pedidos";
+}
+
+<header class="d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="text-primary">@ViewBag.Subtitulo</h1>
+        </div>
+        <div>
+            <a asp-action="Cadastrar" class="btn btn-primary">Novo Pedido</a>
+        </div>
+</header>
+<hr>
+
+<partial name="_Mensagem"></partial>
+
+@if(Model.Count() > 0)
+{
+    <table class="table table-striped local-table-products">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Unitario</th>
+                <th>Valor Total</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.ItemPedido.NomeProduto</td>
+                    <td>@pedido.ItemPedido.Quantidade.ToString("D4")</td>
+                    <td>@pedido.ItemPedido.ValorUnitario.ToString("C");</td>
+                    <td>@pedido.ValorCompra.ToString("C")</td>
+                    <td>
+                        <a asp-action="Cadastrar" asp-route-id="@pedido.IdPedido"
+                            class="btn btn-sm btn-secondary">Alterar</a>
+                        <a asp-action="Excluir" asp-route-id="@pedido.IdPedido"
+                            class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não ha nenhum pedido cadastrado!!</p>
+}
