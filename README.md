@@ -1,4 +1,4 @@
-#*Controle de Estoque Web
+# Controle de Estoque Web
 
 foi uma atividade desenvolvida na disciplina de desenvolvimento web  no  IFES
 Instituto Federel do Espirito santo no semestre de 2021/2,sendo o Professor desta 
